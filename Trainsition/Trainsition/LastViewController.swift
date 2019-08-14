@@ -24,7 +24,9 @@ class LastViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     // goBack, goRoot
-    
+    @IBAction func dismissSelf() {
+        self.dismiss(animated : true, completion: nil)
+    }
     
     
     /*
