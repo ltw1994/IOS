@@ -28,19 +28,20 @@
                                     <color key="titleColor" red="1" green="0.098793720500000001" blue="0.090468891839999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="clear" destination="BYZ-38-t0r" eventType="touchUpInside" id="YhC-Nc-Z9d"/>
                                     <segue destination="FQL-eY-VSl" kind="presentation" id="ja9-Mi-r2G"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-tF-RnX">
                                 <rect key="frame" x="100" y="293" width="175" height="78"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ID" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fo5-mD-oUp">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fo5-mD-oUp">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c21-ZH-hOv">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c21-ZH-hOv">
                                         <rect key="frame" x="0.0" y="48" width="175" height="30"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -147,7 +148,7 @@
                                     <constraint firstAttribute="height" constant="125" id="B8F-fm-X1b"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="SPK-ie-eFY" appends="YES" id="wvG-YL-1DJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="9wG-9E-5WV" appends="YES" id="5CG-jI-qiF"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -183,7 +184,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGV-Kc-8h3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="SPK-ie-eFY"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="9wG-9E-5WV">
+                    <connections>
+                        <action selector="touchUpimageViewWith_sender:" destination="33z-h9-MQw" id="sSm-Jn-O0k"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1770.4000000000001" y="133.5832083958021"/>
         </scene>
@@ -213,7 +218,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldTextEdited:" destination="rLP-5P-iFr" eventType="valueChanged" id="vxh-xo-YFZ"/>
+                                    <action selector="textFieldTextEdited:" destination="rLP-5P-iFr" eventType="editingChanged" id="dSX-vg-s7i"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1c-Vg-f7w">
@@ -222,7 +227,7 @@
                                     <color key="titleColor" red="1" green="0.098793720500000001" blue="0.090468891839999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="clear" destination="rLP-5P-iFr" eventType="touchUpInside" id="95R-1M-ctM"/>
+                                    <action selector="clear" destination="rLP-5P-iFr" eventType="touchUpInside" id="Gmd-sC-IU5"/>
                                     <action selector="dismissSelf" destination="rLP-5P-iFr" eventType="touchUpInside" id="O3a-t1-RVe"/>
                                 </connections>
                             </button>

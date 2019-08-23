@@ -18,11 +18,14 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     var isImageSelected: Bool = false
     
     
+    
     lazy var imagePicker : UIImagePickerController = {
         let picker : UIImagePickerController = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
         picker.allowsEditing = true
+        imageView.isUserInteractionEnabled = true
+
         return picker
     }()
     
@@ -33,17 +36,13 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         determineButtonState()
     }
     
-    @IBAction func touchUpSelectImageButton(_ sender : UIImageView) {
-        self.present(self.imagePicker, animated : true, completion: nil)
-        determineButtonState()
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         myFieldView.delegate = self
         let tapGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.touchUpimageView(_sender:) ))
-        self.view.addGestureRecognizer(tapGesture)
+        self.imageView.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -56,15 +55,14 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         if let originalImage : UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
             self.imageView.image = originalImage
             self.isImageSelected = true
+    
         }
         self.dismiss(animated: true, completion: nil)
          determineButtonState()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        MyInfo.shared.id = idField.text
-//        MyInfo.shared.password = passwordField.text
-//        MyInfo.shared.passwordConfirm = passwordConfirmField.text
+
 
     }
     
